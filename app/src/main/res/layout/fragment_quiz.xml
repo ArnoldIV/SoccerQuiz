@@ -3,12 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.soccerquiz.QuizFragment">
+    tools:context="com.example.soccerquiz.ui.fragment.game.QuizFragment">
 
     <data>
         <variable
             name="quizFragment"
-            type="com.example.soccerquiz.QuizFragment" />
+            type="com.example.soccerquiz.ui.fragment.game.QuizFragment" />
     </data>
 
     <ScrollView
@@ -126,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="92dp"
+                android:layout_marginBottom="50dp"
                 android:background="@drawable/lets_play_button"
                 android:text="Pass"
                 android:textColor="@color/white"

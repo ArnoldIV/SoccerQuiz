@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.soccerquiz.WelcomeScreenFragment">
+    tools:context="com.example.soccerquiz.ui.fragment.game.WelcomeScreenFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"

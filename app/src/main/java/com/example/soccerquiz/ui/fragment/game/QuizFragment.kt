@@ -1,4 +1,4 @@
-package com.example.soccerquiz
+package com.example.soccerquiz.ui.fragment.game
 
 import android.os.Bundle
 import android.os.Handler
@@ -8,56 +8,74 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import com.example.soccerquiz.QuizItem
+import com.example.soccerquiz.R
 import com.example.soccerquiz.databinding.FragmentQuizBinding
+
+import com.example.soccerquiz.util.Constants.Companion.QUESTION_1
+import com.example.soccerquiz.util.Constants.Companion.QUESTION_10
+import com.example.soccerquiz.util.Constants.Companion.QUESTION_11
+import com.example.soccerquiz.util.Constants.Companion.QUESTION_12
+import com.example.soccerquiz.util.Constants.Companion.QUESTION_2
+import com.example.soccerquiz.util.Constants.Companion.QUESTION_3
+import com.example.soccerquiz.util.Constants.Companion.QUESTION_4
+import com.example.soccerquiz.util.Constants.Companion.QUESTION_5
+import com.example.soccerquiz.util.Constants.Companion.QUESTION_6
+import com.example.soccerquiz.util.Constants.Companion.QUESTION_7
+import com.example.soccerquiz.util.Constants.Companion.QUESTION_8
+import com.example.soccerquiz.util.Constants.Companion.QUESTION_9
 
 
 class QuizFragment : Fragment() {
 
 
     private val quizItems: MutableList<QuizItem> = mutableListOf(
-        QuizItem("How many players does each team have on the pitch when a soccer match starts?",
+        QuizItem(QUESTION_1,
             listOf("11", "8", "12")),
 
-        QuizItem("What should be the circumference of a Size 5 (adult) football?",
+        QuizItem(
+            QUESTION_2,
             listOf("27\" to 28\"", "24\" to 25\"", "23\" to 24\"")),
 
-        QuizItem("What is given to a player for a very serious personal foul on an opponent?",
+        QuizItem(
+            QUESTION_3,
             listOf("Red Card", "Green Card", "Yellow Card")),
 
-        QuizItem("To most places in the world, soccer is known as what?",
+        QuizItem(
+            QUESTION_4,
             listOf("Football", "Footgame", "Legball")),
 
-        QuizItem("Offside. If a player is offside, what action does the referee take?",
+        QuizItem(QUESTION_5,
             listOf("Awards an indirect free kick to the opposing team",
                 "Awards a penalty to the opposing team",
                 "Awards a yellow card to the player")),
 
-        QuizItem("How many laws of Association Football are there??",
+        QuizItem(QUESTION_6,
             listOf("17", "11", "23")),
 
-        QuizItem("Excluding the goalkeeper, what part of the body cannot touch the ball?",
+        QuizItem(QUESTION_7,
             listOf("Arm", "Head", "Shoulder")),
 
-        QuizItem("What is it called when a player, without the ball on the offensive team is behind the last defender, or fullback?",
+        QuizItem(QUESTION_8,
             listOf("Offside", "Outside", "Field-side")),
 
-        QuizItem("The Ball. The circumference of the ball should not be greater than what?",
+        QuizItem(QUESTION_9,
             listOf("70", "80", "90")),
 
-        QuizItem("How many minutes are played in a regular game (without injury time or extra time)?",
+        QuizItem(QUESTION_10,
             listOf("90", "95", "100")),
 
-        QuizItem("What statement describes a proper throw-in?",
+        QuizItem(QUESTION_11,
             listOf("Both hands must be on the ball behind the head, both feet must be on the ground",
                 "Both hands must be on the ball behind the head",
                 "Both feet must be on the ground")),
 
-        QuizItem("How big is a regulation official soccer goal?",
+        QuizItem(QUESTION_12,
             listOf("2.44m high, 7.32m wide", "2.55m high, 7.62m wide", "2.33m high, 8.15m wide"))
 
     )
 
-    lateinit var currentQuizItem:QuizItem
+    lateinit var currentQuizItem: QuizItem
     lateinit var answers:MutableList<String>
     private var quizItemIndex = 0
     private val numberOfQuestion = 3
@@ -69,7 +87,7 @@ class QuizFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
        val binding = DataBindingUtil.inflate<FragmentQuizBinding>(
-           inflater,R.layout.fragment_quiz,container,false)
+           inflater, R.layout.fragment_quiz,container,false)
 
         getRandomQuizItem()
 
@@ -112,7 +130,8 @@ class QuizFragment : Fragment() {
                     Handler().postDelayed({
                         //go to missFragment
                         view.findNavController().navigate(
-                            R.id.action_quizFragment_to_missFragment)
+                            R.id.action_quizFragment_to_missFragment
+                        )
                     },3000)
 
 
